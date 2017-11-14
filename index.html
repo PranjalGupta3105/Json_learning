@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JSON crash course</title>
+</head>
+<body>
+  <!-- JSONlint.com -check the validation of our JSON script here-->
+  <ul id="person"></ul>
+
+  <script>
+/*
+// whole of this shit below is a valid Javascript based object notation but clearily not JSON
+  var person = {
+    name: "Pranjal",
+    age: 35,
+    email: function(){
+      return "guptapranjal@gmail.com"
+    }
+  }
+
+  console.log(person.email())
+// Instead to convert a value to JSON notation we use JSON.stringify(<'javascript_object_name'>)
+  var person1 = {
+    name: "Pranjal",
+    age: 35,
+  }
+  person1 = JSON.stringify(person1);
+  console.log("The below is a valid JSON representation note that this has \" \" along the key.")
+  console.log(person1)
+  // Now If I try on printing JSON  as object.property_name the value shall be undefined
+  //like below
+  console.log(person1.name)
+  // If I change this value from JSON object to JS object then this object shall do the work
+  // Convertion takes place using method JSON.parse()
+  //So,
+  person1 = JSON.parse(person1)
+  //Now this will yield you the Result in your console.log()
+  console.log(person1.name)
+
+  var personset = [
+    {
+      name: "Pranjal",
+      age: 22
+    },
+    {
+      name: "Danish",
+      age: 25
+    },
+    {
+      name: "Abhigyan",
+      age: 19
+    }
+  ]
+  // Print a new line in the console
+  console.log("\n")
+  var output = ''
+  // for loop to itterate over the personset array
+  for(var i = 0; i< personset.length;i++)
+  {
+    output += "<li>"+personset[i].name+"</li>"
+    // below was to check the output value in the console -- uncomment to see the output in console
+    //console.log(personset[i].name)
+  }
+  document.getElementById("person").innerHTML = output;
+  console.log('Next Step now is I am gonna create a new file "json file"');
+  */
+  // Uncomment above to see the picture in the first half of the video series.....
+
+//now let's make a request for JSON file people also we would need a server to run this
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(xhttp.responseText)
+    }
+  };
+  xhttp.open("GET", "people.json" , true);
+  xhttp.send();
+
+
+  </script>
+</body>
+</html>
